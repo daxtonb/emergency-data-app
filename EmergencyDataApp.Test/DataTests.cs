@@ -12,10 +12,12 @@ namespace EmergencyDataApp.Test
     public class DataTests
     {
         private readonly IRepository _repository;
+        private readonly DateTime _defaultDate;
 
         public DataTests()
         {
             _repository = new SampleRepository();
+            _defaultDate = new DateTime(2017, 5, 15);  // This is the date used in the sample data
         }
 
         [Fact]
@@ -23,13 +25,27 @@ namespace EmergencyDataApp.Test
         {
             //Given
             IEnumerable<Emergency> emergencies;
-            DateTime date = new DateTime(2017, 5, 15);
+
             //When
-            emergencies = await _repository.GetEmergenciesAsync(date, date);
+            emergencies = await _repository.GetEmergenciesAsync(_defaultDate, _defaultDate);
 
             //Then
             Assert.NotNull(emergencies);
             Assert.True(emergencies.Any(), "Query returned no results.");
+        }
+
+        [Fact]
+        public async Task Can_get_weather_data()
+        {
+            //Given
+            IEnumerable<Weather> weathers;
+
+            //When
+            weathers = await _repository.GetWeatherForDateAsync(_defaultDate);
+
+            // Then
+            Assert.NotNull(weathers);
+            Assert.True(weathers.Any(), "Query returned no results.");
         }
     }
 }
