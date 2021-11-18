@@ -16,6 +16,17 @@ namespace EmergencyDataApp.Data
     /// </summary>
     public class SampleRepository : IRepository
     {
+        private readonly string _metoStatApiKey;
+        public SampleRepository()
+        {
+            Console.WriteLine("Enter RapidAPI key:");
+
+            // This is a terrible place to put to request input.
+            // In production, I would have this sensitive information
+            // stored in a file with priveleged access that the application
+            // reads from
+            _metoStatApiKey = Console.ReadLine();
+        }
         /// <summary>
         /// Simulate retrieving this data from a database
         /// </summary>
@@ -26,15 +37,12 @@ namespace EmergencyDataApp.Data
                 var emergencies = JsonConvert.DeserializeObject<IEnumerable<Emergency>>(SampleEmergencies.data);
 
                 // Return only emergencies in date range
-                return emergencies.Where(e => e.Description.EventOpened.Date >= fromDate && e.Description.EventOpened <= toDate);
+                return emergencies.Where(e => e.Description.EventOpened.Date >= fromDate && e.Description.EventOpened.Date <= toDate);
             });
         }
 
-        public async Task<IEnumerable<Weather>> GetWeatherAsync(DateTime date)
+        public async Task<IEnumerable<Weather>> GetWeatherForDateAsync(DateTime date)
         {
-            // For production, this sensitive information would be read from a file with priveleged access
-            Console.WriteLine("Enter RapidAPI Key:");
-            string apiKey = Console.ReadLine();
             string dateString = date.ToString("yyyy-MM-dd");
 
             // Prep the HTTP Client
@@ -47,7 +55,7 @@ namespace EmergencyDataApp.Data
                 Headers =
                 {
                     { "x-rapidapi-host", "meteostat.p.rapidapi.com" },
-                    { "x-rapidapi-key", apiKey },
+                    { "x-rapidapi-key", _metoStatApiKey },
                 },
             };
 

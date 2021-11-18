@@ -21,8 +21,7 @@ namespace EmergencyDataApp.Data
         /// <summary>
         /// Retrieves weather information for date
         /// </summary>
-        /// <param name="apiKey"></param>
-        /// <param name="date"></param>
-        public Task<IEnumerable<Weather>> GetWeatherAsync(DateTime date);
+        /// <param name="date">Desired weather data date</param>
+        public Task<IEnumerable<Weather>> GetWeatherForDateAsync(DateTime date);
     }
 }
