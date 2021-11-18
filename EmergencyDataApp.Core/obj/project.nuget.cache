@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "I/n5IEhjmlpNv1DYBkCahkYW3cuvTw6dHibcG3FOZJafFQdB60AA4jv462v4J/j0ljVgEQxXtXH7uApSmc551Q==",
+  "dgSpecHash": "Xt+ILlj2lvac8MxBg2x9vKrk8izKxH1DUc5UKnO3vMlk2Bxla7synbKDzBUdE4N9L6InC5kwEPTTSQc6pd8SGg==",
   "success": true,
   "projectFilePath": "/home/dax/Documents/Development/emergency-data-app/EmergencyDataApp.Core/EmergencyDataApp.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/dax/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
