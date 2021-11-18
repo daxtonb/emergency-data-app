@@ -42,7 +42,7 @@ namespace EmergencyDataApp.Core
         /// The snow depth in mm
         /// </summary>
         [JsonProperty("snow")]
-        public int Snow { get; set; }
+        public int? Snow { get; set; }
 
         /// <summary>
         /// The wind direction in degrees
@@ -60,7 +60,7 @@ namespace EmergencyDataApp.Core
         /// The peak wind gust in km/h
         /// </summary>
         [JsonProperty("wpgt")]
-        public double PeakWindGust { get; set; }
+        public double? PeakWindGust { get; set; }
 
         /// <summary>
         /// The sea-level air pressure in hPa
@@ -72,12 +72,12 @@ namespace EmergencyDataApp.Core
         /// The one hour sunshine total in minutes
         /// </summary>
         [JsonProperty("tsun")]
-        public int TotalSunshine { get; set; }
+        public int? TotalSunshine { get; set; }
 
         /// <summary>
         /// The weather condition code
         /// </summary>
         [JsonProperty("coco")]
-        public int WeatherCondition { get; set; }
+        public int? WeatherCondition { get; set; }
     }
 }
