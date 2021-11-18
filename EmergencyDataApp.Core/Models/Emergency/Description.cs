@@ -21,6 +21,12 @@ namespace EmergencyDataApp.Core
         public string DayOfWeek { get; set; }
 
         /// <summary>
+        /// Date-time when event opened
+        /// </summary>
+        [JsonProperty("event_opened")]
+        public DateTime EventOpened { get; set; }
+
+        /// <summary>
         /// Date-time when event closed
         /// </summary>
         [JsonProperty("event_closed")]
