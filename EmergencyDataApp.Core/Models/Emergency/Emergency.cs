@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace EmergencyDataApp.Core
@@ -17,7 +18,7 @@ namespace EmergencyDataApp.Core
         /// Responding unit(s) details
         /// </summary>
         [JsonProperty("apparatus")]
-        public Apparatus Apparatus { get; set; }
+        public IEnumerable<Apparatus> Apparatus { get; set; }
 
         /// <summary>
         /// Details about emergency
