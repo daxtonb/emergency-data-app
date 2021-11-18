@@ -52,6 +52,19 @@ namespace EmergencyDataApp.Core
         [JsonProperty("unit_id")]
         public string UnitId { get; set; }
 
+        /// <summary>
+        /// Data containing the status of each responding unit
+        /// </summary>
+        /// <value></value>
+        [JsonProperty("unit_status")]
+        public Dictionary<string, UnitData> UnitStatus { get; set; }
+
+        /// <summary>
+        /// Type of unite
+        /// </summary>
+        [JsonProperty("unit_type")]
+        public string UnitType { get; set; }
+
 
         /// <summary>
         /// Member of response unit (no data in example JSON files to model this after)
