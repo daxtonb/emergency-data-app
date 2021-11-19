@@ -29,7 +29,7 @@ namespace EmergencyDataApp.Core
         /// Responding shift
         /// </summary>
         [JsonProperty("shift")]
-        public char Shift { get; set; }
+        public string Shift { get; set; }
 
         /// <summary>
         /// Fire department location state

@@ -38,7 +38,7 @@ namespace EmergencyDataApp.Core
         /// </summary>
         /// <value></value>
         [JsonProperty("shift")]
-        public char Shift { get; set; }
+        public string Shift { get; set; }
 
         /// <summary>
         /// Unique identifer of responding unit's station
