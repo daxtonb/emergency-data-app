@@ -31,6 +31,6 @@ namespace EmergencyDataApp.Data
         /// </summary>
         /// <param name="date">Desired weather data date</param>
         /// <returns>Collection of Weather for date</returns>
-        public Task<IEnumerable<Weather>> GetWeatherForDateAsync(DateTime date);
+        public Task<IEnumerable<Weather>> GetWeatherForDateAsync(double lattitude, double longitude, DateTime date);
     }
 }
