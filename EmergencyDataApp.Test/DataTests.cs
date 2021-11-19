@@ -55,7 +55,7 @@ namespace EmergencyDataApp.Test
             IEnumerable<Weather> weathers;
 
             //When
-            weathers = await _repository.GetWeatherForDateAsync(_defaultDate);
+            weathers = await _repository.GetWeatherForDateAsync(37.541885, -77.440624, _defaultDate);
 
             // Then
             Assert.NotNull(weathers);
