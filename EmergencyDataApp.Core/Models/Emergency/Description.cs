@@ -67,6 +67,7 @@ namespace EmergencyDataApp.Core
         /// <summary>
         /// Hour of day of incident
         /// </summary>
+        [JsonProperty("hour_of_day")]
         public short HourOfDay { get; set; }
 
         /// <summary>
