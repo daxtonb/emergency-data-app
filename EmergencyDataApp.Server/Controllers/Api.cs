@@ -32,9 +32,9 @@ namespace EmergencyDataApp.Server
         /// Returns weather for all hours of date
         /// </summary>
         /// <param name="date">Date</param>
-        [HttpGet("{date}")]
-        public async Task<IActionResult> Weather(DateTime date)
-            => Ok(await _repository.GetWeatherForDateAsync(date));
+        [HttpGet("{latitude}/{longitude}/{date}")]
+        public async Task<IActionResult> Weather(double latitude, double longitude, DateTime date)
+            => Ok(await _repository.GetWeatherForDateAsync(latitude, longitude, date));
 
         /// <summary>
         /// Returns all emergencies with weather information for date
