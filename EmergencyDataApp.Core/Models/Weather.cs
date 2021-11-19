@@ -18,25 +18,25 @@ namespace EmergencyDataApp.Core
         /// The air temperature in degrees Celsius
         /// </summary>
         [JsonProperty("temp")]
-        public double Temperature { get; set; }
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// The dew point in degrees Celsius
         /// </summary>
         [JsonProperty("dwpt")]
-        public double DewPoint { get; set; }
+        public double? DewPoint { get; set; }
 
         /// <summary>
         /// The relative humidty in percent
         /// </summary>
         [JsonProperty("rhum")]
-        public int RelativeHumidty { get; set; }
+        public int? RelativeHumidty { get; set; }
 
         /// <summary>
         /// The one hour precipitation total in mm
         /// </summary>
         [JsonProperty("prcp")]
-        public double Precipitation { get; set; }
+        public double? Precipitation { get; set; }
 
         /// <summary>
         /// The snow depth in mm
@@ -48,13 +48,13 @@ namespace EmergencyDataApp.Core
         /// The wind direction in degrees
         /// </summary>
         [JsonProperty("wdir")]
-        public int WindDirection { get; set; }
+        public int? WindDirection { get; set; }
 
         /// <summary>
         /// The average wind speed in km/h
         /// </summary>
         [JsonProperty("wspd")]
-        public double WindSpeed { get; set; }
+        public double? WindSpeed { get; set; }
 
         /// <summary>
         /// The peak wind gust in km/h
@@ -66,7 +66,7 @@ namespace EmergencyDataApp.Core
         /// The sea-level air pressure in hPa
         /// </summary>
         [JsonProperty("pres")]
-        public double AirPressure { get; set; }
+        public double? AirPressure { get; set; }
 
         /// <summary>
         /// The one hour sunshine total in minutes
