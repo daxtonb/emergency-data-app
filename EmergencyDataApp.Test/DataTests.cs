@@ -35,6 +35,20 @@ namespace EmergencyDataApp.Test
         }
 
         [Fact]
+        public async Task Can_get_enhanced_emergency_data()
+        {
+            //Given
+            IEnumerable<Emergency> emergencies;
+
+            //When
+            emergencies = await _repository.GetEnhancedEmergenciesAsync(_defaultDate, _defaultDate);
+
+            //Then
+            Assert.NotNull(emergencies);
+            Assert.True(emergencies.Any(), "Query returned no results.");
+        }
+
+        [Fact]
         public async Task Can_get_weather_data()
         {
             //Given
