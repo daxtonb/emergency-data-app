@@ -40,3 +40,5 @@ dotnet test
 ## Other deliverables
 - Had I had more time, I would have implemented a logging system and implemented a database management system of sorts. In addition to logging, I would also implement better error handling with Try/Catch blocks. I would have also included more sophisticated testing that tested for more than just the requriements of the application.
 - I spent approximately 8 hours on this project.
+
+![image](https://user-images.githubusercontent.com/42884219/142566104-d91b99ae-dabf-461b-ae80-443d2ac4e6e7.png)
