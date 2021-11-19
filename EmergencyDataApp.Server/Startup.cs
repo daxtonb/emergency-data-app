@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmergencyDataApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,11 @@ namespace EmergencyDataApp.Server
         {
 
             services.AddControllers();
+
+            // Scoped DI would be most appropriate for production
+            // For the sake of not requesting user input for every request,
+            // I'll use a singleton here.
+            services.AddSingleton<IRepository>(new SampleRepository());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +44,7 @@ namespace EmergencyDataApp.Server
                 app.UseDeveloperExceptionPage();
             }
             app.UseRouting();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
